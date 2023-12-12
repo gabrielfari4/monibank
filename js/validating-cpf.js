@@ -2,10 +2,8 @@ export default function isACpf(field) {
     const cpf = field.value.replace(/\.|-/g,"");
     
     if (validateRepeatedNumbers(cpf) || validateFirstDigit(cpf) || validateSecondDigit(cpf)) {
-        console.log("Esse CPF não existe!");
-    } else {
-        console.log("Esse CPF é válido!");
-    }
+        field.setCustomValidity('Este CPF não é válido.');
+    } 
 }
 
 function validateRepeatedNumbers(cpf) {

@@ -1,9 +1,9 @@
 export default function isNotUnderage(field) {
     const birthDate = new Date(field.value);
     
-    validateAge(birthDate);
-
-    console.log(validateAge(birthDate));
+    if (!validateAge(birthDate)) {
+        field.setCustomValidity('O usuário não é maior de idade')
+    }
 }
 
 function validateAge(date) {
